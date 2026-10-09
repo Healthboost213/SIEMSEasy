@@ -1,2 +1,15 @@
 # SIEMSEasy
-A simple TUI-based SIEM Utility for SysAdmins. Written in Go.
+A simple and high performance SIEM Utility for SysAdmins. Written in Go.
+
+### Long-Term Project Goals:
+- Working real-time analytics and rule parsing
+- Robust rules and query configurations for wide-range of applications
+- Nice TUI interface and easy to use API
+- Data retention during failure
+- Leader elections and node managements
+
+### Short-Term Project Goals:
+- Get file tailing working
+- Get connected with ClickHouse
+- Work on separating controller and nodes
+- Work on authentication and authorization
