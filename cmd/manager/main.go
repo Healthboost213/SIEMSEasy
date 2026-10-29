@@ -16,7 +16,7 @@ func main() {
 
 	ctx := context.Background()
 
-	conn, err := database.DatabaseConnect()
+	conn, err := database.DatabaseConnect(ctx)
 	if err != nil {
 		log.Fatal(err)
 	}

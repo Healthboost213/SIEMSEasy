@@ -1,0 +1,30 @@
+---
+title: Database Schema
+config:
+  theme: neo-dark
+---
+
+
+erDiagram
+
+    direction LR
+
+    LOGS {
+        UUID LogID PK
+        UUID DeviceID FK
+        IPv4 SourceAddress
+        String ServiceName
+        String Message
+        String MessageHash
+        DateTime ScrapeTimestamp
+        DateTime RecvTimestamp
+
+    }
+
+    DEVICES {
+        UUID DeviceID PK
+        String ProductName
+        String HostName
+    }
+
+    DEVICES ||--o{ LOGS : Contains

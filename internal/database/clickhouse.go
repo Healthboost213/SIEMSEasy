@@ -10,15 +10,13 @@ import (
 	"github.com/joho/godotenv"
 )
 
-func DatabaseConnect() (driver.Conn, error) {
+func DatabaseConnect(ctx context.Context) (driver.Conn, error) {
 
 	err := godotenv.Load()
 
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	ctx := context.Background()
 
 	conn, err := clickhouse.Open(&clickhouse.Options{
 		Addr: []string{os.Getenv("CLICKHOUSE_HOSTNAME")},
@@ -37,5 +35,9 @@ func DatabaseConnect() (driver.Conn, error) {
 	}
 
 	return conn, err
+
+}
+
+func DatabaseInit(ctx context.Context) {
 
 }
